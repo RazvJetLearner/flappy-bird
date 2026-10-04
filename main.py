@@ -13,15 +13,15 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("flappy bird")
 
 ground_scroll = 0
-scroll_speed = 49
+scroll_speed = 4
 
-bg = pygame.image.load('bg.png')
+bg = pygame.image.load('C:\Users\Deragos\Documents\Coding in general\game dev 1\flappy bird\img\bg.png')
 ground_img = pygame.image.load("ground.png")
 
 run = True
 while run:
     clock.tick(fps)
-
+    screen.blit(bg, (0, 0))
     screen.blit(ground_img, (ground_scroll, 768))
     ground_scroll -= scroll_speed
     if abs(ground_scroll) > 35:
@@ -30,6 +30,6 @@ while run:
     for event in pygame.event.get(): 
         if event.type == pygame.QUIT:
             run = False
+    pygame.display.update()
 
 pygame.quit()
-
